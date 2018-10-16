@@ -28,61 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdownSubmenu.forEach(function(submenu) {
 
         submenu.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
 
             const dropContent = submenu.querySelector('.nav__list--submenu');
-            const shouldOpen = !dropContent.classList.contains('show--submenu');
-            e.preventDefault();
 
             closeOpenItems();
 
-
-            if (shouldOpen) {
+            if (!dropContent.classList.contains('show--submenu')) {
                 dropContent.classList.add('show--submenu');
             }
-            e.stopPropagation();
-        });
 
-    });
+        });
+     });
 
     window.addEventListener('click', function(event) {
-
-        if (event.target != dropdownSubmenu) {
-            closeOpenItems();
-        }
+        closeOpenItems();
     });
 
-
-/* ---------------------------------------------------- */
-/* ----- TOGGLE FOOTER MENU ----- */
-/* ---------------------------------------------------- */
-
-    let footertoggle = document.querySelectorAll('.toggle--footer--menu');
-
-    for (let i = 0; i < footertoggle.length; i++) {
-        footertoggle[i].addEventListener('click', menus, false);
-    }
-
-    function menus() {
-
-        let menu = this.querySelector('.toggle--footer');
-        menu.classList.toggle('is--visible');
-    }
-
-/* ---------------------------------------------------- */
-/* ----- CHEVRON ANIMATION ----- */
-/* ---------------------------------------------------- */
-
-    const active = document.querySelectorAll('.menu__item');
-
-    for (let i = 0; i < active.length; i++) {
-        active[i].addEventListener('click', toggleChevron, false);
-    }
-
-    function toggleChevron() {
-
-        let chevron = this.querySelector('.menu__link');
-        chevron.classList.toggle('rotate');
-    }
 
 
 /* ---------------------------------------------------- */
@@ -102,8 +65,46 @@ document.addEventListener('DOMContentLoaded', function() {
       
         elems.forEach(elem => elem.classList.remove('active'));
         evt.target.classList.add('active');
-    };
+
+        if (evt.target.parentElement.classList.contains('nav__item--submenu')) {
+            evt.target.closest('.nav--submenu').querySelector('.nav__link').classList.add('active');
+        }
+    }
 
     navigation.addEventListener('mousedown', makeActive);
-    
+
+
+/* ---------------------------------------------------- */
+/* ----- TOGGLE FOOTER MENU ----- */
+/* ---------------------------------------------------- */
+
+    let footertoggle = document.querySelectorAll('.toggle--footer--menu');
+
+    for (let i = 0; i < footertoggle.length; i++) {
+        footertoggle[i].addEventListener('click', menus, false);
+    }
+
+    function menus() {
+
+        let menu = this.querySelector('.toggle--footer');
+        menu.classList.toggle('is--visible');
+    }
+
+
+/* ---------------------------------------------------- */
+/* ----- CHEVRON ANIMATION ----- */
+/* ---------------------------------------------------- */
+
+    const active = document.querySelectorAll('.menu__item');
+
+    for (let i = 0; i < active.length; i++) {
+        active[i].addEventListener('click', toggleChevron, false);
+    }
+
+    function toggleChevron() {
+
+        let chevron = this.querySelector('.menu__link');
+        chevron.classList.toggle('rotate');
+    }
+
 });

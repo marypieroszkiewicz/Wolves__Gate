@@ -56,6 +56,9 @@ p {
   padding-bottom: .625rem;
 }
 
+/* ----- END OF COMMON ----- */
+
+
 /* ---------------------------------------------------- */
 /* ----- CLEARFIX ----- */
 /* ---------------------------------------------------- */
@@ -66,12 +69,22 @@ p {
   clear: both;
 }
 
+/* ----- END OF CLEARFIX ----- */
+
+
+/* ---------------------------------------------------- */
+/* ----- WEBPAGE CONTAINER ----- */
+/* ---------------------------------------------------- */
+
 .container {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
   position: relative;
 }
+
+/* ----- END OF WEBPAGE CONTAINER ----- */
+
 
 /* ---------------------------------------------------- */
 /* ----- SUPPORTS ----- */
@@ -87,6 +100,9 @@ p {
     background-color: #fff;
   }
 }
+
+/* ----- END OF SUPPORTS ----- */
+
 
 /* ---------------------------------------------------- */
 /* ----- HEADER----- */
@@ -259,6 +275,7 @@ button, .btn-toggle {
 
 .show--submenu {
   display: block;
+  background-color: #f4f4f4;
 }
 
 .nav__list__desktop {
@@ -433,7 +450,6 @@ and (orientation: landscape)  {
 
   .nav--submenu--desktop .nav__list--submenu--desktop--second {
     position: absolute;
-    background-color: #f4f4f4;
     z-index: 100;
     padding-bottom: .9375rem;
   }
@@ -448,6 +464,8 @@ and (orientation: landscape)  {
   }
 
 }
+
+/* ----- END OF HEADER----- */
 
 
 /* ---------------------------------------------------- */
@@ -556,6 +574,7 @@ and (orientation: landscape)  {
 
 }
 
+
 /* ---------------------------------------------------- */
 /* ----- MEDIA QUERIES -- MAIN ----- */
 /* ---------------------------------------------------- */
@@ -646,6 +665,9 @@ and (orientation: landscape)  {
   }
 
 }
+
+/* ----- END OF MAIN ----- */
+
 
 /* ---------------------------------------------------- */
 /* ----- FOOTER ----- */
@@ -896,3 +918,5 @@ and (orientation: landscape)  {
   }
 
 }
+
+/* ----- END OF FOOTER ----- */
