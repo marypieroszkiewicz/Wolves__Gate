@@ -276,6 +276,11 @@ button, .btn-toggle {
 .show--submenu {
   display: block;
   background-color: #f4f4f4;
+  padding: .3125rem 0 .9375rem;
+}
+
+.nav__item--submenu > a {
+  padding: .375rem 1.25rem;
 }
 
 .nav__list__desktop {
@@ -448,10 +453,14 @@ and (orientation: landscape)  {
     margin-bottom: .125rem;
   }
 
+  .show--submenu {
+    padding: 0;
+  }
+
   .nav--submenu--desktop .nav__list--submenu--desktop--second {
     position: absolute;
     z-index: 100;
-    padding-bottom: .9375rem;
+    padding: .9375rem 0;
   }
 
   .nav--submenu--desktop > .nav__list--submenu--desktop--second > li > a {
